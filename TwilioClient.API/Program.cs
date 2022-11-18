@@ -1,6 +1,9 @@
+using TwilioClient.Common.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Register all services using extension method
+builder.Services.RegisterServices();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

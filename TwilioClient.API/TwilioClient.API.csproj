@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TwilioClient.Application\TwilioClient.Application.csproj" />
+    <ProjectReference Include="..\TwilioClient.Common\TwilioClient.Common.csproj" />
   </ItemGroup>
 
 </Project>
