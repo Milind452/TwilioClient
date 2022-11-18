@@ -1,9 +1,17 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using TwilioClient.API.Validators;
 using TwilioClient.Common.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Register all services using extension method
 builder.Services.RegisterServices();
+
+// Add auto validation
+builder.Services.AddFluentValidationAutoValidation();
+// Register all validators
+builder.Services.AddValidatorsFromAssemblyContaining<SMSModelValidator>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
