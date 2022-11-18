@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TwilioClient.API
+namespace TwilioClient.API.Controllers
 {
     [Produces("application/json")]
     [ApiController]
