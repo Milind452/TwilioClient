@@ -1,18 +1,18 @@
 namespace TwilioClient.Common.Exceptions
 {
     [System.Serializable]
-    public class NotFoundExceptionException : System.Exception
+    public class DuplicateItemExceptionException : System.Exception
     {
-        public NotFoundExceptionException()
+        public DuplicateItemExceptionException()
         {
         }
 
-        public NotFoundExceptionException(string message) :
+        public DuplicateItemExceptionException(string message) :
             base(message)
         {
         }
 
-        public NotFoundExceptionException(
+        public DuplicateItemExceptionException(
             string message,
             System.Exception inner
         ) :
@@ -20,7 +20,7 @@ namespace TwilioClient.Common.Exceptions
         {
         }
 
-        protected NotFoundExceptionException(
+        protected DuplicateItemExceptionException(
             System.Runtime.Serialization.SerializationInfo info,
             System.Runtime.Serialization.StreamingContext context
         ) :
