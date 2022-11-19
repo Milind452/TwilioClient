@@ -2,6 +2,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using TwilioClient.API.Validators;
+using TwilioClient.Application.Profiles;
 using TwilioClient.Common.Extensions;
 using TwilioClient.Data;
 
@@ -26,6 +27,9 @@ builder.Services.AddDbContext<AppDbContext>(
         options.UseSqlServer(
             configuration.GetConnectionString("DefaultConnection"),
             x => x.MigrationsAssembly("TwilioClient.Data")));
+
+// Register auto mapper
+builder.Services.AddAutoMapper(typeof(MappingProfile)); 
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
