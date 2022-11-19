@@ -51,7 +51,7 @@ namespace TwilioClient.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegisteredApps");
+                    b.ToTable("RegisteredApp", (string)null);
                 });
 #pragma warning restore 612, 618
         }

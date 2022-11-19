@@ -11,7 +11,7 @@ using TwilioClient.Data;
 namespace TwilioClient.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221119144631_Initial")]
+    [Migration("20221119160745_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -54,7 +54,7 @@ namespace TwilioClient.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegisteredApps");
+                    b.ToTable("RegisteredApp", (string)null);
                 });
 #pragma warning restore 612, 618
         }

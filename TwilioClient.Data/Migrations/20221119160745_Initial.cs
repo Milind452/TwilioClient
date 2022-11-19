@@ -11,7 +11,7 @@ namespace TwilioClient.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "RegisteredApps",
+                name: "RegisteredApp",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
@@ -23,7 +23,7 @@ namespace TwilioClient.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RegisteredApps", x => x.Id);
+                    table.PrimaryKey("PK_RegisteredApp", x => x.Id);
                 });
         }
 
@@ -31,7 +31,7 @@ namespace TwilioClient.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RegisteredApps");
+                name: "RegisteredApp");
         }
     }
 }
