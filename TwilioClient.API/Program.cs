@@ -25,7 +25,7 @@ builder.Services.AddDbContext<AppDbContext>(
     options =>
         options.UseSqlServer(
             configuration.GetConnectionString("DefaultConnection"),
-            x => x.MigrationsAssembly("WebApplication1.Migrations")));
+            x => x.MigrationsAssembly("TwilioClient.Data")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
