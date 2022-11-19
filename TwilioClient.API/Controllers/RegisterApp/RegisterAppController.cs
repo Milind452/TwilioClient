@@ -16,8 +16,15 @@ namespace TwilioClient.API.Controllers
         [HttpPost]
         public async Task<ActionResult> Register(RegisterAppModel app)
         {
-            await _registerAppService.SaveApp(app);
-            return Ok();
+            try
+            {
+                await _registerAppService.SaveApp(app);
+                return Ok($"Application {app.AppName} successfully registered");
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
     }
 }
