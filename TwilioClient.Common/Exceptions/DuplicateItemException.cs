@@ -1,26 +1,23 @@
 namespace TwilioClient.Common.Exceptions
 {
     [System.Serializable]
-    public class DuplicateItemExceptionException : System.Exception
+    public class DuplicateItemException : System.Exception
     {
-        public DuplicateItemExceptionException()
+        public DuplicateItemException()
         {
         }
 
-        public DuplicateItemExceptionException(string message) :
+        public DuplicateItemException(string message) :
             base(message)
         {
         }
 
-        public DuplicateItemExceptionException(
-            string message,
-            System.Exception inner
-        ) :
+        public DuplicateItemException(string message, System.Exception inner) :
             base(message, inner)
         {
         }
 
-        protected DuplicateItemExceptionException(
+        protected DuplicateItemException(
             System.Runtime.Serialization.SerializationInfo info,
             System.Runtime.Serialization.StreamingContext context
         ) :

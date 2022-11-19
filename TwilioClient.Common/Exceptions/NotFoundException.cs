@@ -1,26 +1,23 @@
 namespace TwilioClient.Common.Exceptions
 {
     [System.Serializable]
-    public class NotFoundExceptionException : System.Exception
+    public class NotFoundException : System.Exception
     {
-        public NotFoundExceptionException()
+        public NotFoundException()
         {
         }
 
-        public NotFoundExceptionException(string message) :
+        public NotFoundException(string message) :
             base(message)
         {
         }
 
-        public NotFoundExceptionException(
-            string message,
-            System.Exception inner
-        ) :
+        public NotFoundException(string message, System.Exception inner) :
             base(message, inner)
         {
         }
 
-        protected NotFoundExceptionException(
+        protected NotFoundException(
             System.Runtime.Serialization.SerializationInfo info,
             System.Runtime.Serialization.StreamingContext context
         ) :

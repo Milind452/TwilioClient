@@ -2,6 +2,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TwilioClient.Application.Interfaces;
 using TwilioClient.Application.Models;
+using TwilioClient.Common.Exceptions;
 using TwilioClient.Core.Entities;
 using TwilioClient.Data;
 
@@ -30,8 +31,7 @@ namespace TwilioClient.Application.Services
 
             if (registeredApp != null)
             {
-                // #TODO: Add custom exception
-                throw new Exception();
+                throw new DuplicateItemException();
             }
 
             var incomingApp = _mapper.Map<RegisteredApp>(app);
