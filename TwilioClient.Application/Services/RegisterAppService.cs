@@ -31,7 +31,7 @@ namespace TwilioClient.Application.Services
 
             if (registeredApp != null)
             {
-                throw new DuplicateItemException();
+                throw new DuplicateItemException($"{app.AppName} already exists");
             }
 
             var incomingApp = _mapper.Map<RegisteredApp>(app);
