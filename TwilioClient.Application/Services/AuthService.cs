@@ -31,13 +31,15 @@ namespace TwilioClient.Application.Services
             if (callingApp == null)
             {
                 response.Message = $"Application {appName} is not registered";
+                return response;
             }
             if (callingApp.AppToken != appToken)
             {
                 response.Message = $"Invalid app token for {appName}";
+                return response;
             }
-            response.IsSuccessful = true;
 
+            response.IsSuccessful = true;
             return response;
         }
     }
