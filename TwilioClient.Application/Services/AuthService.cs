@@ -33,7 +33,11 @@ namespace TwilioClient.Application.Services
                 response.Message = $"Application {appName} is not registered";
                 return response;
             }
-            if (callingApp.AppToken != appToken)
+            if (
+                !callingApp
+                    .AppToken
+                    .Equals(appToken, StringComparison.InvariantCulture)
+            )
             {
                 response.Message = $"Invalid app token for {appName}";
                 return response;
