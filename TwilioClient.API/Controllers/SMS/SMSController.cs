@@ -8,15 +8,25 @@ namespace TwilioClient.API.Controllers
     {
         private readonly ISMSService _smsService;
 
-        public SMSController(ISMSService smsService)
+        private readonly IAuthService _authService;
+
+        public SMSController(ISMSService smsService, IAuthService authService)
         {
             _smsService = smsService;
+            _authService = authService;
         }
 
         [HttpPost]
         public async Task<ActionResult> SendSMS(SMSModel smsModel)
         {
-            // #TODO: Add auth service to authenticate calling app before saving sms
+            var response =
+                await _authService
+                    .AuthorizeApp(smsModel.AppName, smsModel.AppToken);
+            if (!response.IsSuccessful)
+            {
+                return Unauthorized(response.Message);
+            }
+
             await _smsService.SaveSMS(smsModel);
             return Ok();
         }
