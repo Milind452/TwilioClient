@@ -16,6 +16,8 @@ namespace TwilioClient.Data
 
         public DbSet<RegisteredApp> RegisteredApps { get; set; }
 
+        public DbSet<OutboundSMS> OutboundSMSs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             // Apply all entity configurations
@@ -24,6 +26,7 @@ namespace TwilioClient.Data
                     RegisteredAppConfiguration
                 ).Assembly);
 
+            // Set table name to entity name
             foreach (var entity in builder.Model.GetEntityTypes())
             {
                 builder.Entity(entity.Name).ToTable(entity.DisplayName());
