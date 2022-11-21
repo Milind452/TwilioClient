@@ -14,6 +14,7 @@ namespace TwilioClient.Data.Configurations
             builder.HasKey(b => b.Id);
             builder.Property(b => b.AppName).IsRequired().HasMaxLength(100);
             builder.Property(b => b.TwilioSID).IsRequired().HasMaxLength(100);
+            builder.Property(b => b.TwilioToken).IsRequired().HasMaxLength(100);
             builder.Property(b => b.Body).IsRequired();
             builder.Property(b => b.To).IsRequired().HasMaxLength(100);
             builder.Property(b => b.From).IsRequired().HasMaxLength(100);
