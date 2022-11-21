@@ -21,6 +21,10 @@ namespace TwilioClient.Data.Configurations
             builder.Property(b => b.SentUTC);
             builder.Property(b => b.Status).HasConversion<string>();
             builder.Property(b => b.MessageResponse);
+            builder
+                .Property(b => b.ExternalId)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
         }
     }
 }
