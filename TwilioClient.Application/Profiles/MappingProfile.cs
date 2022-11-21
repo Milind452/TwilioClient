@@ -11,7 +11,8 @@ namespace TwilioClient.Application.Profiles
             CreateMap<RegisterAppModel, RegisteredApp>();
 
             CreateMap<SMSModel, OutboundSMS>();
-            CreateMap<RegisteredApp, OutboundSMS>();
+            CreateMap<RegisteredApp, OutboundSMS>()
+                .ForMember(p => p.Id, opt => opt.Ignore());
         }
     }
 }
