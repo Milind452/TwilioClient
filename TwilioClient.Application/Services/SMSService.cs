@@ -5,9 +5,21 @@ namespace TwilioClient.Application.Services
 {
     public class SMSService : ISMSService
     {
-        public Task SaveSMS(SMSModel smsModel)
+        private readonly IOutboundSMSService _outboundSMSService;
+
+        public SMSService(IOutboundSMSService outboundSMSService)
         {
-            throw new NotImplementedException();
+            _outboundSMSService = outboundSMSService;
+        }
+
+        public async Task SaveSMS(SMSModel smsModel)
+        {
+            if (smsModel == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            await _outboundSMSService.SaveOutboundSMS(smsModel);
         }
     }
 }
