@@ -17,7 +17,10 @@ namespace TwilioClient.Data.Configurations
             builder.Property(b => b.Body).IsRequired();
             builder.Property(b => b.To).IsRequired().HasMaxLength(100);
             builder.Property(b => b.From).IsRequired().HasMaxLength(100);
-            builder.Property(b => b.ReceivedUTC).IsRequired();
+            builder
+                .Property(b => b.ReceivedUTC)
+                .IsRequired()
+                .HasDefaultValueSql("getutcdate()");
             builder.Property(b => b.SentUTC);
             builder.Property(b => b.Status).HasConversion<string>();
             builder.Property(b => b.MessageResponse);
