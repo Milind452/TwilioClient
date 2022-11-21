@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 using TwilioClient.Core.Entities;
 
 namespace TwilioClient.Data.Configurations
@@ -31,7 +32,8 @@ namespace TwilioClient.Data.Configurations
             builder
                 .Property(b => b.ExternalId)
                 .IsRequired()
-                .ValueGeneratedOnAdd();
+                .ValueGeneratedOnAdd()
+                .HasValueGenerator<SequentialGuidValueGenerator>();
         }
     }
 }
