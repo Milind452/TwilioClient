@@ -9,6 +9,9 @@ namespace TwilioClient.Application.Profiles
         public MappingProfile()
         {
             CreateMap<RegisterAppModel, RegisteredApp>();
+
+            CreateMap<SMSModel, OutboundSMS>();
+            CreateMap<RegisteredApp, OutboundSMS>();
         }
     }
 }
