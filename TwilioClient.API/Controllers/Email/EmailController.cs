@@ -6,10 +6,16 @@ namespace TwilioClient.API.Controllers
 {
     public class EmailController : ApiControllerBase
     {
+        private readonly IEmailService _emailService;
+
         private readonly IAuthService _authService;
 
-        public EmailController(IAuthService authService)
+        public EmailController(
+            IEmailService emailService,
+            IAuthService authService
+        )
         {
+            _emailService = emailService;
             _authService = authService;
         }
 
@@ -24,7 +30,7 @@ namespace TwilioClient.API.Controllers
                 return Unauthorized(response.Message);
             }
 
-            //#TODO: Call emailService to save incoming email
+            await _emailService.SaveEmail(emailModel);
             return Ok();
         }
     }
