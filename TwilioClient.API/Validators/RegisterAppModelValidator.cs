@@ -11,6 +11,7 @@ namespace TwilioClient.API.Validators
             RuleFor(m => m.AppToken).NotEmpty().MaximumLength(100);
             RuleFor(m => m.TwilioSID).NotEmpty().MaximumLength(100);
             RuleFor(m => m.TwilioToken).NotEmpty().MaximumLength(100);
+            RuleFor(m => m.SendGridAPIKey).NotEmpty().MaximumLength(100);
         }
     }
 }
