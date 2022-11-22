@@ -11,5 +11,7 @@ namespace TwilioClient.Core.Entities
         public string TwilioSID { get; set; }
 
         public string TwilioToken { get; set; }
+
+        public string SendGridAPIKey { get; set; }
     }
 }
