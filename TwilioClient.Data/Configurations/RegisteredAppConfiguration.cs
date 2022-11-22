@@ -16,6 +16,10 @@ namespace TwilioClient.Data.Configurations
             builder.Property(b => b.AppToken).IsRequired().HasMaxLength(100);
             builder.Property(b => b.TwilioSID).IsRequired().HasMaxLength(100);
             builder.Property(b => b.TwilioToken).IsRequired().HasMaxLength(100);
+            builder
+                .Property(b => b.SendGridAPIKey)
+                .IsRequired()
+                .HasMaxLength(100);
         }
     }
 }
