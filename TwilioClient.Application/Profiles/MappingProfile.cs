@@ -13,6 +13,10 @@ namespace TwilioClient.Application.Profiles
             CreateMap<SMSModel, OutboundSMS>();
             CreateMap<RegisteredApp, OutboundSMS>()
                 .ForMember(p => p.Id, opt => opt.Ignore());
+            
+            CreateMap<EmailModel, OutboundEmail>();
+            CreateMap<RegisteredApp, OutboundEmail>()
+                .ForMember(p => p.Id, opt => opt.Ignore());
         }
     }
 }
