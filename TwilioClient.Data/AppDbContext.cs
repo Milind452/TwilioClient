@@ -18,6 +18,8 @@ namespace TwilioClient.Data
 
         public DbSet<OutboundSMS> OutboundSMSs { get; set; }
 
+        public DbSet<OutboundEmail> OutboundEmails { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             // Apply all entity configurations
