@@ -5,19 +5,21 @@ namespace TwilioClient.Application.Services
 {
     public class EmailService : IEmailService
     {
-        public EmailService()
+        private readonly IOutboundEmailService _outboundEmailService;
+
+        public EmailService(IOutboundEmailService outboundEmailService)
         {
+            _outboundEmailService = outboundEmailService;
         }
 
-        public Task SaveEmail(EmailModel emailModel)
+        public async Task SaveEmail(EmailModel emailModel)
         {
             if (emailModel == null)
             {
                 throw new ArgumentNullException();
             }
 
-            // #TODO: call outbound email service
-            throw new NotImplementedException();
+            await _outboundEmailService.SaveOutboundEmail(emailModel);
         }
     }
 }
