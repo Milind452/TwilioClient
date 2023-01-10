@@ -29,6 +29,7 @@ namespace TwilioClient.Data.Configurations
                 .HasConversion<string>()
                 .HasMaxLength(100);
             builder.Property(b => b.MessageResponse);
+            builder.Property(b => b.MessageSID);
             builder
                 .Property(b => b.ExternalId)
                 .IsRequired()

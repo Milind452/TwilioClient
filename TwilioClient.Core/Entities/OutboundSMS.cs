@@ -26,6 +26,8 @@ namespace TwilioClient.Core.Entities
 
         public string MessageResponse { get; set; }
 
+        public string MessageSID { get; set; }
+
         public Guid ExternalId { get; set; }
     }
 }
